@@ -12,3 +12,4 @@ langchain-community==0.3.0
 langchain-core==0.3.5
 scikit-learn
 openpyxl
+sentence-transformers
