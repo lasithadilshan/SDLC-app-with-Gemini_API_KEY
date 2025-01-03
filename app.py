@@ -8,7 +8,7 @@ import time
 import google.generativeai as genai
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+from langchain.embeddings import SentenceTransformerEmbeddings
 
 st.set_page_config(
     page_title="SDLC Automate APP",
