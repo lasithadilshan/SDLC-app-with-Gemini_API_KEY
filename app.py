@@ -104,6 +104,7 @@ with tab1:
                 "Think of yourself as a senior business analyst. Your responsibility is to read the Business Requirement Document "
                 "and write the User Stories according to that BRD. Think step-by-step and write all possible user stories "
                 "for the Business Requirement Document."
+                "Make sure to give fully complete all user stories."
             )
             start_query_time = time.time()
             matches = vector_store.similarity_search(prompt_message, k=3)
@@ -121,9 +122,10 @@ with tab2:
     if st.button("Generate Test Cases"):
         if user_story_text:
             test_case_prompt = (
-                "Think of yourself as a senior QA engineer. Your responsibility is to read the user story provided and generate "
-                "all possible test cases. Think in a structured way, covering functional and edge cases where applicable. "
-                "Here is the user story: \n\n" + user_story_text
+                    "Think of yourself as a senior QA engineer. Your responsibility is to read the user story provided and generate "
+                    "all possible test cases. Think in a structured way, covering functional and edge cases where applicable. "
+                    "Make sure to give fully complete all test cases."
+                    "Here is the user story: \n\n" + user_story_text
             )
             response = generate_text(test_case_prompt)
             st.write(response)
@@ -139,7 +141,7 @@ with tab3:
             cucumber_prompt = (
                     "Think of yourself as a test automation engineer. Your task is to convert the following test case into a Cucumber "
                     "script using Gherkin syntax and the Step definition file with the Java language. Make sure to include all scenarios with Given, When, Then steps as applicable. "
-                    "Make sure to give fully complete feature file and fully complete step definition Java full code."
+                    "Make sure to give fully complete feature file and fully complete step definition Java code."
                     "Here is the test case: \n\n" + test_case_text
             )
             response = generate_text(cucumber_prompt)
@@ -154,9 +156,10 @@ with tab4:
     if st.button("Generate Selenium Script"):
         if selenium_test_case_text:
             selenium_prompt = (
-                "Assume you are a test automation engineer specializing in Selenium. Your task is to convert the following test case "
-                "into a Selenium WebDriver script using Python. Ensure to include all steps to perform the actions in the test case, "
-                "such as locating elements, interacting with the web page, and validating outcomes. Here is the test case: \n\n" + selenium_test_case_text
+                    "Assume you are a test automation engineer specializing in Selenium. Your task is to convert the following test case "
+                    "into a Selenium WebDriver script using Python. Ensure to include all steps to perform the actions in the test case, "
+                    "Make sure to give fully complete selenium full code."
+                    "such as locating elements, interacting with the web page, and validating outcomes. Here is the test case: \n\n" + selenium_test_case_text
             )
             response = generate_text(selenium_prompt)
             st.write(response)
