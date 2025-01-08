@@ -101,8 +101,10 @@ with tab1:
         if text:
             vector_store = create_vector_store(text)
             prompt_message = (
-                "Imagine you are a Senior Business Analyst. Your responsibility is to read the Business Requirement Document (BRD) and create User Stories based on it. Think step-by-step and ensure that you write all possible User Stories derived from the BRD.
-Make sure the User Stories are complete, well-structured, and capture all functional and non-functional requirements."
+                """
+                Imagine you are a Senior Business Analyst. Your responsibility is to read the Business Requirement Document (BRD) 
+                and create User Stories based on it. Think step-by-step and ensure that you write all possible User Stories derived from the BRD.
+                """
             )
             start_query_time = time.time()
             matches = vector_store.similarity_search(prompt_message, k=3)
