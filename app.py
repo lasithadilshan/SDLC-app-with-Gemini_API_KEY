@@ -102,8 +102,7 @@ with tab1:
             vector_store = create_vector_store(text)
             prompt_message = (
                 """
-                Imagine you are a Senior Business Analyst. Your responsibility is to read the Business Requirement Document (BRD) 
-                and create User Stories based on it. Think step-by-step and ensure that you write all possible User Stories derived from the BRD.
+                Imagine you are a Senior Business Analyst. Your responsibility is to read the entire Business Requirement Document (BRD) and convert it into detailed User Stories. Think step-by-step and ensure you write all possible User Stories derived from the BRD. Provide fully complete User Stories only, without any additional explanation or sentences.
                 """
             )
             start_query_time = time.time()
