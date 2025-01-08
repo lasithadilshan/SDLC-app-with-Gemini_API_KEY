@@ -107,7 +107,7 @@ with tab1:
                 "Think step-by-step and ensure you write all possible User Stories derived from the BRD." 
                 "Provide fully complete User Stories only, "
                 "without any additional explanation or sentences."
-                "give only exact output"
+                "give only user stories"
             )
             start_query_time = time.time()
             matches = vector_store.similarity_search(prompt_message, k=3)
